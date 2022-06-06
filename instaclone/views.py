@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-
-from instaclone.models import Post
+from .models import Post
 
 # Create your views here.
 # def index(request):
@@ -10,4 +9,3 @@ from instaclone.models import Post
 class HomeView(ListView):
     model = Post
     template_name = 'index.html'
-    
