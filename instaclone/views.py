@@ -11,10 +11,12 @@ from .forms import PostForm, EditForm
 class HomeView(ListView):
     model = Post
     template_name = 'index.html'
+    # ordering = ['-id']
 
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_details.html'
+    
 class AddPostView(CreateView):
     model = Post
     form_class = PostForm
