@@ -19,6 +19,6 @@ from django.urls import path, include
 urlpatterns = [
     path('', include('instaclone.urls')),
     path('admin/', admin.site.urls),
-    path('auth/', include('django.contrib.auth.urls')),
-    path('auth/', include('auth.urls')),
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]
