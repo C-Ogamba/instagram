@@ -17,6 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('instaclone/', include('instaclone.urls')),
+    path('', include('instaclone.urls')),
     path('admin/', admin.site.urls),
 ]
