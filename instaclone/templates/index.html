@@ -10,7 +10,7 @@
             {{ post.title }} </a>- 
             {{ post.author.first_name }} - 
             {{ post.author.last_name }} - 
-            {{ post.post_date }}
+            <small><em>{{ post.post_date }}</em></small>
             <small>
             <a href="{% url 'update_post' post.pk %}">Edit</a>
 
