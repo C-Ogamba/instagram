@@ -10,6 +10,6 @@ class HomeView(ListView):
     model = Post
     template_name = 'index.html'
 
-class AtricleDetailView(DeprecationWarning):
+class ArticleDetailView(DetailView):
     model = Post
-    template_name = 'artcle_details.html'
+    template_name = 'article_details.html'
