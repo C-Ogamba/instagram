@@ -9,3 +9,7 @@ from .models import Post
 class HomeView(ListView):
     model = Post
     template_name = 'index.html'
+
+class AtricleDetailView(DeprecationWarning):
+    model = Post
+    template_name = 'artcle_details.html'
