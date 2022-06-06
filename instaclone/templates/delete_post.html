@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-
+{% if user.is_authenticated %}
     <h1>Delete Post</h1>
     <br/><br/>
     <div class="form-group">
@@ -15,5 +15,8 @@
 
         </form>
     </div>
+{% else %}
+        Login to continue
+{% endif %}
    
 {% endblock %}
