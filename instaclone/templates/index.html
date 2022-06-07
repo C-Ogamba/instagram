@@ -1,17 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Post</h1>
-    <ul>
+    
     {% for post in object_list %}
-    <li>
-        <a href="{% url 'article-detail' post.pk %}">
-            {{ post.title }} </a>- 
-            {{ post.category}} - 
-            {{ post.author.first_name }} - 
-            {{ post.author.last_name }} - 
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ post.image.url }}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title"><a href="{% url 'article-detail' post.pk %}">
+            {{ post.title }} </a></h5>
             <small><em>{{ post.post_date }}</em></small>
+            <p class="card-text">{{ post.author }}: {{ post.body|slice:":200" }}</p>
             <small>
                 {% if user.is_authenticated %}
             <a href="{% url 'update_post' post.pk %}">Edit</a>
@@ -19,8 +17,8 @@
             <a href="{% url 'delete_post' post.pk %}">Delete</a>
                 {% endif %}
             </small><br/>
-        {{ post.body|slice:":200"|safe }}</li>
+        </div>
+    </div>
     {% endfor %}
-    </ul>
 
 {% endblock %}
