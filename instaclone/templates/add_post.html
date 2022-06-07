@@ -16,6 +16,10 @@
 
         </form>
     </div>
+    <script>
+        let name = "{{ user.id }}";
+        document.getElementById("elder").value= name;
+    </script>
 {% else %}
     Login to continue
 {% endif %}
