@@ -18,9 +18,7 @@ The following technologies have been used on this project:
 # Setup / Installation
 * clone the repo:
 
-```shell
-git clone https://github.com/james-muriithi/django-insta.git
-```
+
 
 ```
 cd blog
