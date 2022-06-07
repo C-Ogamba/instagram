@@ -2,10 +2,10 @@
 
 {% block content %}
 
-    <h1>Categories</h1>
+    <h1>{{ cats }}</h1>
     <ul>
-    {% for post in object_list %}
-    <li>
+    {% for post in category_posts %}
+        <li>
         <a href="{% url 'article-detail' post.pk %}">
             {{ post.title }} </a>- 
             {{ post.category}} - 
@@ -22,5 +22,4 @@
         {{ post.body|slice:":200"|safe }}</li>
     {% endfor %}
     </ul>
-
 {% endblock %}
