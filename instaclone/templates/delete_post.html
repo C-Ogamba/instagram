@@ -5,18 +5,22 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-    <h1>Delete Post</h1>
-    <br/><br/>
-    <div class="form-group">
-        <form action="" method="POST">
-            {% csrf_token %}
-            <strong>Are you sure?</strong><br/><br/>
-            <button class="btn btn-secondary">Delete Post</button>
+{% if user.id == post.author.id %}
+        <h1>Delete Post</h1>
+        <br/><br/>
+        <div class="form-group">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <strong>Are you sure?</strong><br/><br/>
+                <button class="btn btn-secondary">Delete Post</button>
 
-        </form>
-    </div>
-{% else %}
-        Login to continue
-{% endif %}
-   
+            </form>
+        </div>
+        {% else %}
+                Login to continue
+        {% endif %}
+        {% else %}
+                Login to continue
+        {% endif %}
+
 {% endblock %}
