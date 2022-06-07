@@ -31,3 +31,13 @@ class Post(models.Model):
         return reverse('home')
         # return reverse('article-detail', args=(str(self.id)))
 
+    def save_post(self):
+        return self.save()
+
+    def update_caption(self, body):
+        return self.body.update()
+
+    def delete_post(self):
+        return self.delete()
+
+
