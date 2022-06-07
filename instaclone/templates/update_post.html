@@ -5,6 +5,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
+ {% if user.id == post.author.id %}
     <h1>Update Post</h1>
     <br/><br/>
     <div class="form-group">
@@ -15,6 +16,10 @@
 
         </form>
     </div>
+    {% else %}
+        Login to continue
+    {% endif %}
+
     {% else %}
         Login to continue
     {% endif %}
