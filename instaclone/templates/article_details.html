@@ -5,7 +5,9 @@
 {% block content %}
 
     <h1>{{ post.title }} </h1>
+    {% if post.image %}
     <img class="card-img-top" style="width: 18rem;" src="{{ post.image.url }}" alt="Card image cap">
+    {% endif %}
     <br/>
     <small>By: 
         {{ post.author.first_name}} 

@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect,get_object_or_404
 from django.views import generic
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django.contrib.auth.views import PasswordChangeView
 from django.urls import reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangingForm
+
+from django.contrib.auth.models import User 
+
 # Create your views here.
 
 
@@ -28,3 +31,5 @@ class UserEditView(generic.UpdateView):
 
     def  get_object(self):
         return self.request.user
+
+    
